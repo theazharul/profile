@@ -6,7 +6,11 @@ import Input from './components/input';
 export default function Home() {
     const [form, setForm] = useState({
         name: '',
-        height: ''
+        height: {
+            feet: '',
+            inch: ''
+        },
+        religion: ''
     });
 
     const onChangeHandler = (e) => {
@@ -15,8 +19,7 @@ export default function Home() {
     };
 
     const nameInput = {
-        label: "name",
-        type: "text",
+        label: "Name",
         id: "name",
         name: "name",
         value: form.name,
@@ -24,22 +27,43 @@ export default function Home() {
         changeHandler: onChangeHandler
     }
 
-    const heightInput = {
-        label: "height",
-        type: "text",
+    const heightFeetInput = {
+        label: "Height(Feet)",
         id: "height",
         name: "height",
-        value: form.height,
-        placeholder: "Height",
+        value: form.height.feet,
+        placeholder: "Feet",
         changeHandler: onChangeHandler
+    }
+    const heightInchInput = {
+        label: "Height(Inch)",
+        id: "height",
+        name: "height",
+        value: form.height.inch,
+        placeholder: "Inch",
+        changeHandler: onChangeHandler
+    }
+    const religionInput = {
+        label: "religion",
+        id: "religion",
+        name: "religion",
+        value: form.religion,
+        placeholder: "Relagion",
+        onChangeHandler: onChangeHandler
     }
 
     return (
         <>
-            <form method="" id="" action="" className='m-auto p-auto space-y-4 w-full'>
-                <Input {...nameInput} />
-                <Input {...heightInput} />
-            </form>
+            <div className="container m-auto p-auto">
+
+                <form method="" id="" action="" className='m-auto p-auto space-y-4 w-full'>
+                    <Input {...nameInput} />
+                    <Input {...heightFeetInput} />
+                    <Input {...heightInchInput} />
+                    <Input {...religionInput} />
+                </form>
+
+            </div>
         </>
     )
 }
