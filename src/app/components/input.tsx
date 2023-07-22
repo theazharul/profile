@@ -2,7 +2,7 @@ import { FunctionComponent } from "react"
 
 type Form = {
     label: string,
-    type: string,
+    type?: string,
     value: string,
     id: string,
     name: string,

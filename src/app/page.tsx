@@ -10,7 +10,10 @@ export default function Home() {
             feet: '',
             inch: ''
         },
-        religion: ''
+        religion: '',
+        education: '',
+        fathersname: '',
+        mothersname: ''
     });
 
     const onChangeHandler = (e) => {
@@ -49,8 +52,32 @@ export default function Home() {
         name: "religion",
         value: form.religion,
         placeholder: "Relagion",
-        onChangeHandler: onChangeHandler
+        changeHandler: onChangeHandler
     }
+    const educationInput ={
+        label: "education",
+        id: "education",
+        name: "education",
+        value: form.education,
+        placeholder: "education",
+        changeHandler: onChangeHandler
+    }
+    const fathersnameInput ={
+        label: "fathersname",
+        id: "fathersname",
+        name: "fathersname",
+        value: form.fathersname,
+        placeholder: "Father's Name",
+        changeHandler: onChangeHandler
+    }
+        const mothersnameInput ={
+        label: "mothersname",
+        id: "mothersname",
+        name: "mothersname",
+        value: form.mothersname,
+        placeholder: "Mother's Name",
+    }
+    changeHandler: onChangeHandler
 
     return (
         <>
@@ -61,6 +88,9 @@ export default function Home() {
                     <Input {...heightFeetInput} />
                     <Input {...heightInchInput} />
                     <Input {...religionInput} />
+                    <Input {...educationInput} />
+                    <Input {...fathersnameInput} />
+                    <Input {...mothersnameInput} />
                 </form>
 
             </div>
